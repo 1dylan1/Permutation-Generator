@@ -1,4 +1,4 @@
-#define _CRT_SECURE_NO_WARNINGS
+#define _CRT_SECURE_NO_WARNINGS //needed because sprintf is deprecated and sprintf_s was not working on older compilers
 #include<stdio.h>
 #include<iostream>
 #include<stdlib.h>
