@@ -121,7 +121,7 @@ void printPermutations(string word, int permutations) {
 
 int main() {
 
-	string word = "xtp";
+	string word = "abc";
 	int permutations = 6;
 	printPermutations(word, permutations);
 
