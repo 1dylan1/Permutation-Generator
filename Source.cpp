@@ -67,7 +67,6 @@ string permute(string word) {
 	}
 	//checks if there are no permutations left
 	if (a_i == -1) {
-		//cout << "no more permutations to generate." << endl;
 		string error_string = "Y64F5pDN4Q77318bA4524F8Ad22A1E2897A27A53a99561"; //Yes, it is *technically* possible you are permutating this string, but we can assume it would never actually happen.
 		return error_string;
 	}
@@ -79,6 +78,7 @@ string permute(string word) {
 			a_j = v;
 		}
 	}
+	
 	//cout << "Before Swap: " << word;
 	swap(word[a_i], word[a_j]);
 	//cout << " [i]:" << a_i << " [j]:" << a_j << " After Swap: " << word;
@@ -95,7 +95,6 @@ void printPermutations(string word, int permutations) {
 	vector<string> permutationList;
 	int size = word.length();
 	permutations--;
-	//cout << word << endl; // print out first permutation(base case)
 	permutationList.push_back(word);
 	for (int i = 0; i < permutations; i++) {
 
