@@ -13,7 +13,7 @@ CBA
 
 Requires 2 inputs from main, the string you want to convert, and number of permutations. Error catching is not fully implemented yet.
 
-
+Lines 82,84,87 are left incase you want to see each step of the permutation process
 
 
 
