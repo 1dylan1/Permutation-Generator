@@ -11,8 +11,7 @@ BCA
 CAB
 CBA
 
-Requires 2 inputs from main, the string you want to convert, and number of permutations. There is error catching in the event you enter a higher permutation amount than is possible with said string. 
-
+Requires 2 inputs from main, the string you want to convert, and number of permutations. Error catching is not fully implemented yet.
 
 
 
