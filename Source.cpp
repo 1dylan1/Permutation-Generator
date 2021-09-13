@@ -1,4 +1,4 @@
-#define _CRT_SECURE_NO_WARNINGS //needed because sprintf is deprecated and sprintf_s was not working on older compilers
+#define _CRT_SECURE_NO_WARNINGS
 #include<stdio.h>
 #include<iostream>
 #include<stdlib.h>
@@ -8,7 +8,6 @@
 #include<vector>
 
 using namespace std;
-
 
 map<int, char> makeMap(string word) {
 	map<int, char> map;
@@ -25,9 +24,6 @@ map<int, char> makeMap(string word) {
 				n++;
 			}
 		}
-
-
-
 	}
 	return map;
 }
@@ -78,28 +74,31 @@ string permute(string word) {
 			a_j = v;
 		}
 	}
-	
-	//cout << "Before Swap: " << word;
+
 	swap(word[a_i], word[a_j]);
-	//cout << " [i]:" << a_i << " [j]:" << a_j << " After Swap: " << word;
 	a_i++;
 	reverse(word.begin() + a_i, word.end()); //reverse a_[i+1] including a_[i+1] with rest of word
-	//cout << " After Reverse: " << word << endl;
+
 	return word;
 }
 
 void printPermutations(string word, int permutations) {
+
+	cout << "permutations" << endl;
 
 	map<int, char> map = makeMap(word); //key value pairs
 	word = convertToNumbers(word);
 	vector<string> permutationList;
 	int size = word.length();
 	permutations--;
+
 	permutationList.push_back(word);
 	for (int i = 0; i < permutations; i++) {
 
-		if (word == "Y64F5pDN4Q77318bA4524F8Ad22A1E2897A27A53a99561")
+		if (word == "Y64F5pDN4Q77318bA4524F8Ad22A1E2897A27A53a99561") {//compensation for user error, incase someone tries to print more permutations than are possible.
+			cout << "No more permutations to generate" << endl;
 			break;
+		}
 		word = permute(word);
 		permutationList.push_back(word); //fill vector with our permutations
 	}
@@ -120,8 +119,8 @@ void printPermutations(string word, int permutations) {
 
 int main() {
 
-	string word = "abc";
-	int permutations = 6;
+	string word = "ABC";
+	int permutations = 8;
 	printPermutations(word, permutations);
 
 	return 0;
