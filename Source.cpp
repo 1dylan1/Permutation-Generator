@@ -61,11 +61,6 @@ string permute(string word) {
 			a_i = i;
 		}
 	}
-	//checks if there are no permutations left
-	if (a_i == -1) {
-		string error_string = "Y64F5pDN4Q77318bA4524F8Ad22A1E2897A27A53a99561"; //Yes, it is *technically* possible you are permutating this string, but we can assume it would never actually happen.
-		return error_string;
-	}
 
 	//finding a_j (j)
 	int a_j = -1;
@@ -94,11 +89,6 @@ void printPermutations(string word, int permutations) {
 
 	permutationList.push_back(word);
 	for (int i = 0; i < permutations; i++) {
-
-		if (word == "Y64F5pDN4Q77318bA4524F8Ad22A1E2897A27A53a99561") {//compensation for user error, incase someone tries to print more permutations than are possible.
-			cout << "No more permutations to generate" << endl;
-			break;
-		}
 		word = permute(word);
 		permutationList.push_back(word); //fill vector with our permutations
 	}
