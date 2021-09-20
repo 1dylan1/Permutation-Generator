@@ -16,6 +16,7 @@ double factorial(int length) {
 	}
 	return factorial;
 }
+
 map<int, char> makeMap(string word) {
 	map<int, char> map;
 	int n = 1;
