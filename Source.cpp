@@ -9,6 +9,13 @@
 
 using namespace std;
 
+double factorial(int length) {
+	long double factorial = 1;
+	for (int i = 1; i <= length; i++) {
+		factorial *= i;
+	}
+	return factorial;
+}
 map<int, char> makeMap(string word) {
 	map<int, char> map;
 	int n = 1;
@@ -69,28 +76,37 @@ string permute(string word) {
 			a_j = v;
 		}
 	}
-
+	cout << "Before Swap: " << word << "|| [i]:" << a_i << " [j]:" << a_j;
 	swap(word[a_i], word[a_j]);
+	cout << " || After Swap: " << word;
 	a_i++;
 	reverse(word.begin() + a_i, word.end()); //reverse a_[i+1] including a_[i+1] with rest of word
+	cout << " || After Reverse: " << word << endl;
 
 	return word;
 }
 
 void printPermutations(string word, int permutations) {
 
-	cout << "permutations" << endl;
-
 	map<int, char> map = makeMap(word); //key value pairs
+	cout << "word: " << word;
 	word = convertToNumbers(word);
+	cout << " -> " << word << endl;
 	vector<string> permutationList;
 	int size = word.length();
 	permutations--;
-
+	double limit = factorial(size);
 	permutationList.push_back(word);
 	for (int i = 0; i < permutations; i++) {
-		word = permute(word);
-		permutationList.push_back(word); //fill vector with our permutations
+
+		if (i == limit-1) {
+			cout << "No more permutations left. " << limit << " is limit" << endl;
+			break;
+		}
+		else {
+			word = permute(word);
+			permutationList.push_back(word); //fill vector with our permutations
+		}
 	}
 
 	for (int i = 0; i < permutationList.size(); i++) {
@@ -110,7 +126,7 @@ void printPermutations(string word, int permutations) {
 int main() {
 
 	string word = "ABC";
-	int permutations = 8;
+	int permutations = 10;
 	printPermutations(word, permutations);
 
 	return 0;
