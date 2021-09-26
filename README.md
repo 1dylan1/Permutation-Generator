@@ -1,7 +1,9 @@
 # Permutation-Generator
 
 Generates permutations in lexographic order with steps & visualization.
-(https://en.wikipedia.org/wiki/Lexicographic_order & https://stackoverflow.com/questions/45950646/what-is-lexicographical-order are helpful resources)
+(https://en.wikipedia.org/wiki/Lexicographic_order & 
+
+https://stackoverflow.com/questions/45950646/what-is-lexicographical-order are helpful resources)
 
 
 Example input: ABC 6
